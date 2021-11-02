@@ -26,7 +26,14 @@ class ListFragment : Fragment() {
 
     private val viewModel: ProductViewModel by activityViewModels()
 
-    private val adapter = ProductListAdapter()
+    private val editDirection = ListFragmentDirections.actionListFragmentToEditFragment()
+
+    private var adapter: ProductListAdapter? = null
+
+    private val productSelectObserver = Observer<Product> {
+        editDirection.product = it
+        findNavController().navigate(editDirection)
+    }
 
     private val divider : DividerItemDecoration by lazy{
         DividerItemDecoration(
@@ -44,15 +51,15 @@ class ListFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val productsObserver = Observer<List<Product>>{
-        adapter.updateList(it)
+        adapter?.updateList(it)
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentListBinding.inflate(inflater, container, false)
+        adapter = ProductListAdapter()
         viewModel.products.observe(viewLifecycleOwner, productsObserver)
         return binding.root
     }
@@ -60,18 +67,18 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.fetchProducts()
-
         binding.productList.adapter = adapter
 
+        adapter?.selectedListItem?.observe(viewLifecycleOwner, productSelectObserver)
         binding.productList.addItemDecoration(divider)
-
-        binding.addItems.setOnClickListener { view ->
-            findNavController().navigate(R.id.action_Go_To_Add_Products)
+        binding.addItems.setOnClickListener {
+            findNavController().navigate(R.id.action_ListFragment_to_AddItemsFragment)
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        adapter = null
     }
 }

@@ -5,8 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable/edit_text_bg.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_add_items.xml" value="0.23802083333333332" />
-        <entry key="app/src/main/res/layout/fragment_edit.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_edit.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_list.xml" value="0.11927083333333334" />
         <entry key="app/src/main/res/layout/product_item_list.xml" value="0.1203125" />
       </map>
