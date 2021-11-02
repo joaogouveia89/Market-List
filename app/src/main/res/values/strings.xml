@@ -23,5 +23,6 @@
     <string name="delete">Excluir</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
+    <string name="action_clean_all">Limpar Lista</string>
 
 </resources>

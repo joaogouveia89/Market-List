@@ -1,5 +1,6 @@
 package com.example.listadecompras
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -62,7 +64,17 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_clean_list -> {
+                AlertDialog.Builder(this)
+                    .setTitle("Confirmação")
+                    .setMessage("Quer mesmo limpar lista?")
+                    .setIcon(android.R.drawable.ic_delete)
+                    .setPositiveButton(R.string.yes) { _, _ ->
+                        viewModel.cleanTable()
+                    }
+                    .setNegativeButton(R.string.no, null).show()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
