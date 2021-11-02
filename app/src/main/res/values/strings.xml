@@ -15,5 +15,8 @@
     <string name="paste_the_list_here">Cole a lista aqui</string>
     <string name="save">Salvar</string>
     <string name="price_placeholder">€ %1$.2f</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="product_edit">Editar Produto</string>
 
 </resources>

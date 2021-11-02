@@ -14,15 +14,25 @@
         <action
             android:id="@+id/action_Go_To_Add_Products"
             app:destination="@id/AddItemsFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_EditFragment"
+            app:destination="@id/EditFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/EditFragment"
+        android:name="com.example.listadecompras.edit.EditFragment"
+        android:label="@string/product_edit"
+        tools:layout="@layout/fragment_edit">
+        <argument
+            android:name="product"
+            app:argType="com.example.listadecompras.data.entities.Product"
+            android:defaultValue="@null" />
+    </fragment>
+
     <fragment
         android:id="@+id/AddItemsFragment"
         android:name="com.example.listadecompras.add.AddItemsFragment"
         android:label="@string/add_products"
-        tools:layout="@layout/fragment_add_items">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_add_items"/>
 </navigation>
