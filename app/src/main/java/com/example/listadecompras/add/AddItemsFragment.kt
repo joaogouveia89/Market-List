@@ -1,7 +1,6 @@
-package com.example.listadecompras.add_items
+package com.example.listadecompras.add
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.listadecompras.ProductViewModel
-import com.example.listadecompras.R
 import com.example.listadecompras.data.entities.Product
 import com.example.listadecompras.databinding.FragmentAddItemsBinding
 

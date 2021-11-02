@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/AddItemsFragment"
-        android:name="com.example.listadecompras.add_items.AddItemsFragment"
+        android:name="com.example.listadecompras.add.AddItemsFragment"
         android:label="@string/add_products"
         tools:layout="@layout/fragment_add_items">
 
