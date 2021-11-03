@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/joaogouveia89/Market-List?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/joaogouveia89/Market-List?style=for-the-badge)
 
-<img src="imgs/main_screen.jpeg" alt="main screen">
+<img src="imgs/main_screen.jpeg" alt="main screen" width="50%">
 
 > Application that handles a market list offline in device's storage system. The list can be just pasted in a big edit text field and the application creates all the products
 
